@@ -64,6 +64,31 @@
 			exit;
 		} else {
 			//セーブデータ変更処理
+			$i=0;
+			$overflag=FALSE;
+			while ($i<count($datafilebuf)) {
+				$tmparr=explode("=",$datafilebuf[$i]);
+				if ($_GET['object']==$tmparr[0]) {
+					$datafilebuf[$i]=$tmparr[0]."=".$_GET['value']."</br>";
+					$overflag=TRUE;
+					break;
+				}
+				$i++;
+			}
+			if ($overflag==FALSE) {
+				$datafilebuf[count($datafilebuf)]=$_GET['object']."=".$_GET['value'];
+			}
+			//保存
+			$i=0;
+			$tmpbuf="";
+			while ($i<count($datafilebuf)) {
+				$tmpbuf=$tmpbuf.$datafilebuf[$i];
+				$i++;
+			}
+			$tmpbuf=str_replace("</br>","\n",$tmpbuf);
+			file_put_contents($datafilename,$tmpbuf);
+			$tmpbuf=str_replace("\n","</br>",$tmpbuf);
+			echo $tmpbuf;
 		}
 
 	} else {
