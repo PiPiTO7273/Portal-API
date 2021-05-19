@@ -1,8 +1,10 @@
 
 <?php
+	include("API-GetAPIkey.php");
+
 	//APIキー認証
 	if (array_key_exists('key',$_GET)==TRUE) {
-		if ($_GET['key']=="VnNNVTSXPjngTYVFMWuXiX5n8FDEy534") {
+		if ($_GET['key']==PortalAPI_Getkey("API-GetGlobalRanking")) {
 			$authflag=TRUE;
 		} else {
 			$authflag=FALSE;

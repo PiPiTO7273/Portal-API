@@ -1,8 +1,10 @@
 
 <?php
+	include("API-GetAPIkey.php");
+
 	//APIキー認証
 	if (array_key_exists('key',$_GET)==TRUE) {
-		if ($_GET['key']=="ZLkrnadXTsM4ZMBT6Kh9F25wF59Z5mmp") {
+		if ($_GET['key']==PortalAPI_Getkey("API-GetEncryptString")) {
 			$authflag=TRUE;
 		} else {
 			$authflag=FALSE;
