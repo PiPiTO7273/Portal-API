@@ -21,7 +21,7 @@
 	$updatearr=file($updatefilename);
 	$i=0;
 	while ($i<count($updatearr)) {
-		echo $updatearr[$i];
+		echo $updatearr[$i]."<br>";
 		$i=$i+1;
 	}
 

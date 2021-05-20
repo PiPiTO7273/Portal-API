@@ -2,6 +2,8 @@
 <?php
 	include("API-GetAPIkey.php");
 
+	error_reporting(E_ALL & ~E_NOTICE);
+
 	//APIキー認証
 	if (array_key_exists('key',$_GET)==TRUE) {
 		if ($_GET['key']==PortalAPI_Getkey("API-GetGlobalRanking")) {
@@ -29,17 +31,20 @@
 				$rankarr[$exi]['name']=$tmparr[1];
 				$rankarr[$exi]['score']=$tmparr[2];
 				$sort[$exi]=$tmparr[2];
+				$secsort[$exi]=$tmparr[0];
 				$exi++;
 			}
 
 			//ソート
-			array_multisort($sort,SORT_DESC,$rankarr);
+			array_multisort($secsort,SORT_ASC,SORT_REGULAR,$sort,SORT_DESC,SORT_REGULAR,$rankarr);
 
 			//出力
 			$exi=0;
+			$rankcnt['']=0;
 			echo"[SAVEDATA]</br>";
 			while ($exi<count($sharedbuf)) {
-				echo $rankarr[$exi]['id'].".RANK#".$exi."=".$rankarr[$exi]['name'].",".$rankarr[$exi]['score']."</br>";
+				$rankcnt[$rankarr[$exi]['id']]++;
+				echo $rankarr[$exi]['id'].".RANK#".($rankcnt[$rankarr[$exi]['id']])."=".$rankarr[$exi]['name'].",".$rankarr[$exi]['score']."</br>";
 				$exi++;
 			}
 		} else {
