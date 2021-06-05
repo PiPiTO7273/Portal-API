@@ -76,7 +76,7 @@
 				$i++;
 			}
 			if ($overflag==FALSE) {
-				$datafilebuf[count($datafilebuf)]=$_GET['object']."=".$_GET['value'];
+				$datafilebuf[count($datafilebuf)]=$_GET['object']."=".$_GET['value']."</br>";
 			}
 			//保存
 			$i=0;

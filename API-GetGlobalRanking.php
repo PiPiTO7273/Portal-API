@@ -30,8 +30,8 @@
 				$rankarr[$exi]['id']=$tmparr[0];
 				$rankarr[$exi]['name']=$tmparr[1];
 				$rankarr[$exi]['score']=$tmparr[2];
-				$sort[$exi]=$tmparr[2];
-				$secsort[$exi]=$tmparr[0];
+				$sort[$exi]=(int)$tmparr[2];
+				$secsort[$exi]=(int)$tmparr[0];
 				$exi++;
 			}
 

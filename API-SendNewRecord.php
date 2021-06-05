@@ -62,6 +62,10 @@
 		echo"ERROR_UNKNOWN_PRM";
 		exit;
 	}
+	if (array_key_exists('type',$_GET)==FALSE) {
+		echo"ERROR_UNKNOWN_PRM";
+		exit;
+	}
 	if (array_key_exists('graph',$_GET)==FALSE) {
 		echo"ERROR_UNKNOWN_PRM";
 		exit;
@@ -81,7 +85,8 @@
 	$tmpstr[10]="NumLate=".$_GET['j_la'];
 	$tmpstr[11]="MaxCombo=".$_GET['maxcombo'];
 	$tmpstr[12]="Graph=".$_GET['graph'];
-	$tmpstr[13]="Date=".date('Y.m.d.H.i.s');
+	$tmpstr[13]="Type=".$_GET['type'];
+	$tmpstr[14]="Date=".date('Y.m.d.H.i.s');
 
 	$i=0;
 	$buf="";

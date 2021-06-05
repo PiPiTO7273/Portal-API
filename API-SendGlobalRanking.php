@@ -46,7 +46,7 @@
 					//name一致
 					$writemode=1;	//上書きモード
 					$overcolumnid=$i;
-					if ($_GET['score']<=$tmparr[2]) {
+					if ((int)$_GET['score']<=(int)$tmparr[2]) {
 						$writemode=2;	//スコアが低いため書き込みをスキップする
 					}
 				}
