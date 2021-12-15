@@ -2,3 +2,6 @@ core_Update.dat
 API-GetAPIkey.php
 profile/
 record/
+register.php
+signin.php
+transfer.php
