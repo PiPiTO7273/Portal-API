@@ -61,7 +61,7 @@
 						$writebuf=str_replace($_POST['object_'.(string)$i]."=".$datafilebuf[$_POST['object_'.(string)$i]],$_POST['object_'.(string)$i]."=".$_POST['value_'.(string)$i],$writebuf);
 					} else {
 						//新規
-						$writebuf=$writebuf.$_POST['object_'.(string)$i]."=".$_POST['value_'.(string)$i];
+						$writebuf=$writebuf.$_POST['object_'.(string)$i]."=".$_POST['value_'.(string)$i]."\n";
 					}
 				} else {
 					break;
